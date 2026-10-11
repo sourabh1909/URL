@@ -15,6 +15,10 @@ import { generalLimiter } from './middleware/rateLimiter';
 export function createApp() {
   const app = express();
 
+  if (env.NODE_ENV === 'production') {
+    app.set('trust proxy', 1);
+  }
+
   // Basic security and parsing
   app.use(
     helmet({
@@ -57,10 +61,11 @@ export function createApp() {
       secret: env.SESSION_SECRET,
       resave: false,
       saveUninitialized: false,
+      proxy: env.NODE_ENV === 'production',
       cookie: {
         httpOnly: true,
         secure: env.NODE_ENV === 'production',
-        sameSite: 'lax',
+        sameSite: env.NODE_ENV === 'production' ? 'none' : 'lax',
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         domain: env.COOKIE_DOMAIN || undefined,
       },

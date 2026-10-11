@@ -38,6 +38,8 @@ export interface OverviewMetrics {
   countryBreakdown: Array<{ name: string; count: number }>;
 }
 
+export const API_BASE_URL = (import.meta.env.VITE_API_URL || '').replace(/\/+$/, '');
+
 class ApiClient {
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
     const config: RequestInit = {
@@ -49,7 +51,8 @@ class ApiClient {
       credentials: 'include',
     };
 
-    const res = await fetch(endpoint, config);
+    const targetUrl = endpoint.startsWith('http') ? endpoint : `${API_BASE_URL}${endpoint}`;
+    const res = await fetch(targetUrl, config);
     const data = await res.json().catch(() => ({}));
 
     if (!res.ok) {

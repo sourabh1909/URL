@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../features/auth/AuthContext';
 import { ShieldCheck, AlertCircle } from 'lucide-react';
+import { API_BASE_URL } from '../lib/api';
 
 export default function LoginPage() {
   const [searchParams] = useSearchParams();
@@ -16,11 +17,11 @@ export default function LoginPage() {
   }, [user, loading, navigate]);
 
   const handleGoogleLogin = () => {
-    window.location.href = '/api/auth/google';
+    window.location.href = `${API_BASE_URL}/api/auth/google`;
   };
 
   const handleGitHubLogin = () => {
-    window.location.href = '/api/auth/github';
+    window.location.href = `${API_BASE_URL}/api/auth/github`;
   };
 
   return (

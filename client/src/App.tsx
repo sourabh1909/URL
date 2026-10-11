@@ -1,7 +1,8 @@
 import React from 'react';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import { ThemeProvider } from './features/theme/ThemeContext';
 import { AuthProvider, useAuth } from './features/auth/AuthContext';
+import { API_BASE_URL } from './lib/api';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
@@ -27,6 +28,22 @@ function ProtectedRoute({ children }: { children: React.ReactNode }) {
   }
 
   return <>{children}</>;
+}
+
+function ShortLinkRedirect() {
+  const { shortCode } = useParams<{ shortCode: string }>();
+
+  React.useEffect(() => {
+    if (shortCode) {
+      window.location.replace(`${API_BASE_URL}/${shortCode}`);
+    }
+  }, [shortCode]);
+
+  return (
+    <div className="flex-1 flex items-center justify-center p-12 text-nordic-slate">
+      <Loader2 className="w-6 h-6 animate-spin text-nordic-pine dark:text-nordic-sage" />
+    </div>
+  );
 }
 
 function MainApp() {
@@ -61,6 +78,7 @@ function MainApp() {
               </ProtectedRoute>
             }
           />
+          <Route path="/:shortCode" element={<ShortLinkRedirect />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
