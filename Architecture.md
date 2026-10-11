@@ -1,8 +1,8 @@
-# NordLink — System Architecture
+# ShortURL — System Architecture
 
 ## 1. Purpose
 
-This document describes the logical architecture for NordLink, a URL shortener with OAuth authentication, link management, and analytics.
+This document describes the logical architecture for ShortURL, a modern URL shortener with OAuth authentication, link management, and analytics.
 
 The intended architecture separates the React frontend, Express API, authentication/session handling, business services, and PostgreSQL persistence.
 

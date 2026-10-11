@@ -1,8 +1,8 @@
-# NordLink
+# ShortURL
 
 **Short links. Clear insights.**
 
-NordLink is a Nordic-inspired URL shortener built with React, TypeScript, Express, PostgreSQL, and Prisma. It supports Google and GitHub OAuth, custom aliases, QR codes, link management, and click analytics.
+ShortURL is a modern, privacy-conscious URL shortener built with React, TypeScript, Express, MongoDB, and Prisma. It supports Google and GitHub OAuth, custom aliases, QR codes, link management, and click analytics.
 
 > Status: project specification / implementation scaffold. Configure OAuth credentials and complete the implementation before treating it as production-ready.
 
@@ -32,7 +32,7 @@ See [`tech.md`](./tech.md) for technology and implementation details, [`PRD.md`]
 A recommended structure is:
 
 ```text
-nordlink/
+shorturl/
 ├── client/
 │   ├── src/
 │   │   ├── components/
@@ -112,7 +112,7 @@ COOKIE_DOMAIN=
 
 ### 3. Sync Database with MongoDB
 
-Ensure your MongoDB service is running (e.g. locally on `mongodb://localhost:27017/nordlink`), then synchronize your collections and indexes:
+Ensure your MongoDB service is running (e.g. locally with replica set `mongodb://127.0.0.1:27017/shorturl?replicaSet=rs0&directConnection=true` or MongoDB Atlas), then synchronize your collections and indexes:
 
 ```bash
 npm run prisma:generate

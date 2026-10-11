@@ -54,7 +54,7 @@ export default function SettingsPage() {
 
           <div>
             <div className="text-lg font-bold text-nordic-charcoal dark:text-nordic-dark-text">
-              {user.name || 'NordLink User'}
+              {user.name || 'ShortURL User'}
             </div>
             <div className="text-sm text-nordic-slate flex items-center space-x-1.5 mt-0.5">
               <span>{user.email || 'No email attached'}</span>

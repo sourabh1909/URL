@@ -522,7 +522,7 @@ export default function DashboardPage() {
             {qrModalLink.qrCode && (
               <a
                 href={qrModalLink.qrCode}
-                download={`nordlink-${qrModalLink.shortCode}.png`}
+                download={`shorturl-${qrModalLink.shortCode}.png`}
                 className="inline-flex items-center space-x-2 px-5 py-2.5 rounded-xl bg-nordic-pine text-white text-xs font-semibold hover:bg-nordic-pine-light transition-colors"
               >
                 <Download className="w-4 h-4" />

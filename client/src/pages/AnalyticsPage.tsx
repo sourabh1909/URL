@@ -257,7 +257,7 @@ export default function AnalyticsPage() {
             <Info className="w-4 h-4 text-nordic-pine dark:text-nordic-sage flex-shrink-0 mt-0.5" />
             <div>
               <span className="font-semibold text-nordic-charcoal dark:text-nordic-dark-text">Privacy-conscious metrics: </span>
-              NordLink records aggregated click counts, coarse device types, and referrer hostnames without storing persistent IP addresses, invasive fingerprinting, or tracking cookie identifiers across the web.
+              ShortURL records aggregated click counts, coarse device types, and referrer hostnames without storing persistent IP addresses, invasive fingerprinting, or tracking cookie identifiers across the web.
             </div>
           </div>
         </div>

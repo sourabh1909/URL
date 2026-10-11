@@ -36,7 +36,7 @@ export default function LandingPage() {
         </h1>
 
         <p className="text-lg sm:text-xl text-nordic-slate max-w-2xl mx-auto font-normal leading-relaxed">
-          NordLink is a calm, privacy-conscious URL shortener with custom aliases, instant QR codes, and lightweight click analytics.
+          ShortURL is a calm, privacy-conscious URL shortener with custom aliases, instant QR codes, and lightweight click analytics.
         </p>
 
         <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -167,7 +167,7 @@ export default function LandingPage() {
             to="/login"
             className="inline-flex items-center space-x-2 px-8 py-3.5 rounded-xl bg-nordic-pine text-white font-semibold hover:bg-nordic-pine-light transition-all shadow-sm active:scale-95"
           >
-            <span>Sign In to NordLink</span>
+            <span>Sign In to ShortURL</span>
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

@@ -1,8 +1,8 @@
-# NordLink — Technical Stack and Implementation Guide
+# ShortURL — Technical Stack and Implementation Guide
 
 ## 1. Overview
 
-NordLink is a full-stack URL shortener with OAuth authentication, link management, QR codes, and click analytics. The UI follows a calm Nordic/Scandinavian design language.
+ShortURL is a full-stack URL shortener with OAuth authentication, link management, QR codes, and click analytics. The UI follows a calm, clean minimalist design language.
 
 This document defines the selected technologies and implementation conventions. Product requirements live in `PRD.md`; system boundaries and data flows live in `Architecture.md`; local setup and usage live in `README.md`.
 

@@ -4,7 +4,7 @@ import { env } from './config/env';
 const app = createApp();
 
 const server = app.listen(env.PORT, () => {
-  console.log(`🌲 NordLink Server running in ${env.NODE_ENV} mode on http://localhost:${env.PORT}`);
+  console.log(`🔗 ShortURL Server running in ${env.NODE_ENV} mode on http://localhost:${env.PORT}`);
   console.log(`🔗 Configured Client URL: ${env.CLIENT_URL}`);
 });
 

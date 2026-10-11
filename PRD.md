@@ -1,19 +1,19 @@
-# NordLink — Product Requirements Document (PRD)
+# ShortURL — Product Requirements Document (PRD)
 
 ## 1. Product Summary
 
-**Product name:** NordLink  
+**Product name:** ShortURL  
 **Product type:** URL-shortening SaaS  
 **Design direction:** Nordic / Scandinavian minimalist  
 **Primary users:** Students, creators, teams, and individuals who need manageable short links and basic performance analytics.
 
-NordLink lets authenticated users turn long URLs into short, shareable links, manage those links, and understand how they are being used.
+ShortURL lets authenticated users turn long URLs into short, shareable links, manage those links, and understand how they are being used.
 
 ## 2. Problem Statement
 
 Long URLs are difficult to share, remember, and present cleanly. Users also need a central place to organize links and understand click activity without using a cluttered interface.
 
-NordLink solves this with short links, custom aliases, QR codes, link management, and simple analytics in a clean, privacy-conscious product.
+ShortURL solves this with short links, custom aliases, QR codes, link management, and simple analytics in a clean, privacy-conscious product.
 
 ## 3. Goals
 

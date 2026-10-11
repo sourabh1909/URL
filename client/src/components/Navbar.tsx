@@ -21,7 +21,7 @@ export default function Navbar() {
             </svg>
           </div>
           <span className="text-xl font-bold tracking-tight text-nordic-pine dark:text-nordic-mist">
-            NordLink
+            ShortURL
           </span>
         </Link>
 

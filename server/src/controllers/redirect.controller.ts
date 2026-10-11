@@ -21,7 +21,7 @@ export class RedirectController {
           <head>
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
-            <title>Link Disabled — NordLink</title>
+            <title>Link Disabled — ShortURL</title>
             <style>
               body {
                 font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -70,8 +70,8 @@ export class RedirectController {
             <div class="card">
               <span class="badge">Link Inactive</span>
               <h1>This link is currently disabled</h1>
-              <p>The owner of this NordLink has paused or deactivated this redirect.</p>
-              <a href="/">Go to NordLink Home</a>
+              <p>The owner of this short link has paused or deactivated this redirect.</p>
+              <a href="/">Go to ShortURL Home</a>
             </div>
           </body>
           </html>
@@ -86,7 +86,7 @@ export class RedirectController {
         <head>
           <meta charset="utf-8">
           <meta name="viewport" content="width=device-width, initial-scale=1">
-          <title>Link Not Found — NordLink</title>
+          <title>Link Not Found — ShortURL</title>
           <style>
             body {
               font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -136,7 +136,7 @@ export class RedirectController {
             <span class="badge">404</span>
             <h1>Link not found</h1>
             <p>The short link you are trying to visit does not exist or may have been deleted.</p>
-            <a href="/">Go to NordLink Home</a>
+            <a href="/">Go to ShortURL Home</a>
           </div>
         </body>
         </html>

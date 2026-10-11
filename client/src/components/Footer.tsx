@@ -4,7 +4,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center space-x-2">
           <div className="w-4 h-4 rounded-md bg-nordic-pine"></div>
-          <span className="font-semibold text-nordic-charcoal dark:text-nordic-dark-text">NordLink</span>
+          <span className="font-semibold text-nordic-charcoal dark:text-nordic-dark-text">ShortURL</span>
           <span>— Short links. Clear insights.</span>
         </div>
         <div className="flex items-center space-x-6">

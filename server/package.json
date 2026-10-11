@@ -1,5 +1,5 @@
 {
-  "name": "@nordlink/server",
+  "name": "@shorturl/server",
   "version": "1.0.0",
   "private": true,
   "main": "dist/index.js",
@@ -21,7 +21,7 @@
     "express-session": "^1.18.1",
     "helmet": "^8.0.0",
     "nanoid": "^3.3.8",
-    "nordlink": "file:..",
+    "shorturl": "file:..",
     "pg": "^8.13.1",
     "qrcode": "^1.5.4",
     "ua-parser-js": "^2.0.0",

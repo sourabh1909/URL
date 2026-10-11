@@ -46,7 +46,7 @@ describe('Nordic UI Critical Flows & Accessibility', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText(/Sign in to NordLink/i)).toBeDefined();
+    expect(screen.getByText(/Sign in to ShortURL/i)).toBeDefined();
     expect(screen.getByText(/Continue with Google/i)).toBeDefined();
     expect(screen.getByText(/Continue with GitHub/i)).toBeDefined();
     expect(screen.getByText(/Passwordless OAuth 2\.0 \/ OpenID Connect/i)).toBeDefined();

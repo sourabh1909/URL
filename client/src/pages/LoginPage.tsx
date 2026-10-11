@@ -33,7 +33,7 @@ export default function LoginPage() {
             </svg>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-nordic-charcoal dark:text-nordic-dark-text">
-            Sign in to NordLink
+            Sign in to ShortURL
           </h1>
           <p className="text-sm text-nordic-slate">
             Manage your short links, custom aliases, and view click analytics.

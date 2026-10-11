@@ -146,7 +146,7 @@ export class AuthService {
     const userResponse = await fetch('https://api.github.com/user', {
       headers: {
         Authorization: `Bearer ${tokens.access_token}`,
-        'User-Agent': 'NordLink-App',
+        'User-Agent': 'ShortURL-App',
       },
     });
 
@@ -170,7 +170,7 @@ export class AuthService {
       const emailsResponse = await fetch('https://api.github.com/user/emails', {
         headers: {
           Authorization: `Bearer ${tokens.access_token}`,
-          'User-Agent': 'NordLink-App',
+          'User-Agent': 'ShortURL-App',
         },
       });
 
