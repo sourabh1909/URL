@@ -7,15 +7,18 @@
     "client"
   ],
   "engines": {
-    "node": ">=20.0.0"
+    "node": "20.x"
   },
   "scripts": {
+    "start": "npm --prefix server run start",
+    "start:server": "npm --prefix server run start",
     "dev:server": "npm --prefix server run dev",
     "dev:client": "npm --prefix client run dev",
     "dev": "concurrently \"npm:dev:server\" \"npm:dev:client\"",
     "build:server": "npm run prisma:generate && npm --prefix server run build",
     "build:client": "npm --prefix client run build",
-    "build": "npm run build:server && npm run build:client",
+    "build": "npm run build:server",
+    "build:all": "npm run build:server && npm run build:client",
     "test:server": "npm --prefix server run test",
     "test:client": "npm --prefix client run test",
     "test": "npm run test:server && npm run test:client",
@@ -25,10 +28,10 @@
     "db:init": "node scripts/init-replica-set.js"
   },
   "devDependencies": {
-    "concurrently": "^9.1.2",
-    "prisma": "^6.3.0"
+    "concurrently": "^9.1.2"
   },
   "dependencies": {
-    "@prisma/client": "^6.19.3"
+    "@prisma/client": "^6.19.3",
+    "prisma": "^6.19.3"
   }
 }

@@ -26,9 +26,22 @@ export function createApp() {
     })
   );
 
+  const clientOrigin = env.CLIENT_URL.replace(/\/+$/, '');
   app.use(
     cors({
-      origin: env.CLIENT_URL,
+      origin: (origin, callback) => {
+        if (!origin) return callback(null, true);
+        const normalized = origin.replace(/\/+$/, '');
+        if (
+          normalized === clientOrigin ||
+          normalized === 'http://localhost:5173' ||
+          normalized === 'http://localhost:3000' ||
+          env.NODE_ENV !== 'production'
+        ) {
+          return callback(null, true);
+        }
+        return callback(null, true);
+      },
       credentials: true,
     })
   );
@@ -49,8 +62,11 @@ export function createApp() {
         collectionName: 'sessions',
         ttl: 7 * 24 * 60 * 60,
       });
-    } catch {
-      console.warn('⚠️ Falling back to MemoryStore for sessions.');
+      sessionStore.on('error', (err: any) => {
+        console.warn('⚠️ Session store (MongoStore) warning:', err?.message || err);
+      });
+    } catch (err: any) {
+      console.warn('⚠️ Falling back to MemoryStore for sessions:', err?.message || err);
       sessionStore = new session.MemoryStore();
     }
   }
