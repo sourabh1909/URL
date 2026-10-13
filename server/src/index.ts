@@ -8,6 +8,14 @@ const server = app.listen(env.PORT, '0.0.0.0', () => {
   console.log(`🔗 Configured Client URL: ${env.CLIENT_URL}`);
 });
 
+process.on('unhandledRejection', (reason: any) => {
+  console.warn('⚠️ Unhandled Promise Rejection (server kept alive):', reason?.message || reason);
+});
+
+process.on('uncaughtException', (err: any) => {
+  console.error('⚠️ Uncaught Exception:', err?.message || err);
+});
+
 process.on('SIGTERM', () => {
   console.log('SIGTERM signal received: closing HTTP server');
   server.close(() => {

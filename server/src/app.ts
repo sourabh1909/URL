@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
 import session from 'express-session';
 import MongoStore from 'connect-mongo';
+import { MongoClient } from 'mongodb';
 import { env } from './config/env';
 import authRoutes from './routes/auth.routes';
 import linkRoutes from './routes/link.routes';
@@ -57,8 +58,15 @@ export function createApp() {
     sessionStore = new session.MemoryStore();
   } else {
     try {
+      const clientPromise = MongoClient.connect(env.DATABASE_URL, {
+        serverSelectionTimeoutMS: 8000,
+      });
+      clientPromise.catch((err: any) => {
+        console.warn('⚠️ MongoDB Atlas initial connection warning (ensure 0.0.0.0/0 is whitelisted in Atlas Network Access):', err?.message || err);
+      });
+
       sessionStore = MongoStore.create({
-        mongoUrl: env.DATABASE_URL,
+        clientPromise,
         collectionName: 'sessions',
         ttl: 7 * 24 * 60 * 60,
       });
