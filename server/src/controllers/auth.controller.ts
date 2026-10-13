@@ -11,7 +11,12 @@ export class AuthController {
       req.session.oauthState = state;
       req.session.oauthNonce = nonce;
       req.session.oauthProvider = 'google';
-      res.redirect(url);
+      req.session.save((err) => {
+        if (err) {
+          console.warn('⚠️ Session save warning in googleAuth:', err?.message || err);
+        }
+        res.redirect(url);
+      });
     } catch (error) {
       next(error);
     }
@@ -22,7 +27,12 @@ export class AuthController {
       const { url, state } = AuthService.getGitHubAuthUrl();
       req.session.oauthState = state;
       req.session.oauthProvider = 'github';
-      res.redirect(url);
+      req.session.save((err) => {
+        if (err) {
+          console.warn('⚠️ Session save warning in githubAuth:', err?.message || err);
+        }
+        res.redirect(url);
+      });
     } catch (error) {
       next(error);
     }
